@@ -9,7 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>jib-k8s-limits-example</module>
-        <module>jib-k8s-limits-shenandoah</module>
+        <module>jib-k8s-limits-shenandoah-example</module>
     </modules>
     <packaging>pom</packaging>
 

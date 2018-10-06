@@ -16,19 +16,19 @@ public class MemoryActuator {
         Map<String, String> memoryInfo = new HashMap<>();
 
         Runtime runtime = Runtime.getRuntime();
-        long allocatedHeapMemory = runtime.totalMemory(); // current heap allocated to the VM process
+        long allocatedHeapMemory = runtime.totalMemory();
         memoryInfo.put("allocatedHeapMemory", toMegaByte(allocatedHeapMemory));
 
-        long freeHeapMemory = runtime.freeMemory(); // out of the current heap, how much is free
+        long freeHeapMemory = runtime.freeMemory();
         memoryInfo.put("freeHeapMemory", toMegaByte(freeHeapMemory));
 
-        long availableMaxHeapMemory = runtime.maxMemory(); // Max heap VM can use e.g. Xmx setting
+        long availableMaxHeapMemory = runtime.maxMemory();
         memoryInfo.put("availableMaxHeapMemory", toMegaByte(availableMaxHeapMemory));
 
-        long usedHeapMemory = allocatedHeapMemory - freeHeapMemory; // how much of the current heap the VM is using
+        long usedHeapMemory = allocatedHeapMemory - freeHeapMemory;
         memoryInfo.put("usedHeapMemory", toMegaByte(usedHeapMemory));
 
-        long availableMemoryToAllocateForHeap = availableMaxHeapMemory - usedHeapMemory; // available memory i.e. Maximum heap size minus the current amount used
+        long availableMemoryToAllocateForHeap = availableMaxHeapMemory - usedHeapMemory;
         memoryInfo.put("availableMemoryToAllocateForHeap", toMegaByte(availableMemoryToAllocateForHeap));
 
         return memoryInfo;
